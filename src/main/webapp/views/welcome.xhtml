@@ -22,8 +22,14 @@
     </ui:insert>
 
     <div id="main">
-        <div id="client-time">
+        <div id="client-date">
             <div class="clock-sign">Client time</div>
+            <ui:insert>
+                <ui:include src="clocks.xhtml"/>
+            </ui:insert>
+        </div>
+        <div id="server-date">
+            <div class="clock-sign">Server time</div>
             <ui:insert>
                 <ui:include src="clocks.xhtml"/>
             </ui:insert>
