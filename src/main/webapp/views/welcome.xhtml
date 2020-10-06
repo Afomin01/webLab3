@@ -5,54 +5,36 @@
   Date: 06.10.2020
   Time: 2:15
 -->
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
-    <h:outputStylesheet name="css/clock.css" />
+    <h:outputStylesheet name="css/welcome.css" />
+    <h:outputStylesheet name="css/general.css"/>
 
     <h:outputScript name="js/jQuery.js" />
     <h:outputScript name="js/welcome.js" />
+
+    <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"/>
 </h:head>
 
 <h:body>
-    <svg id="clock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-         width="500" height="500" viewBox="-100 -100 200 200">
+    <ui:insert>
+        <ui:include src="header.xhtml"/>
+    </ui:insert>
 
-        <defs>
-            <circle cx="0" cy="87" r="2.2" id="minMarker"/>
-            <line x1="0" y1="95" x2="0" y2="78" id="hourMarker"/>
-        </defs>
+    <div id="main">
+        <ui:insert>
+            <ui:include src="clocks.xhtml"/>
+        </ui:insert>
+    </div>
 
-        <g id="markerSet">
-            <use xlink:href="#hourMarker"/>
-            <use xlink:href="#minMarker" transform="rotate( 6)"/>
-            <use xlink:href="#minMarker" transform="rotate(12)"/>
-            <use xlink:href="#minMarker" transform="rotate(18)"/>
-            <use xlink:href="#minMarker" transform="rotate(24)"/>
-        </g>
-        <use xlink:href="#markerSet" transform="rotate( 30)"/>
-        <use xlink:href="#markerSet" transform="rotate( 60)"/>
-        <use xlink:href="#markerSet" transform="rotate( 90)"/>
-        <use xlink:href="#markerSet" transform="rotate(120)"/>
-        <use xlink:href="#markerSet" transform="rotate(150)"/>
-        <use xlink:href="#markerSet" transform="rotate(180)"/>
-        <use xlink:href="#markerSet" transform="rotate(210)"/>
-        <use xlink:href="#markerSet" transform="rotate(240)"/>
-        <use xlink:href="#markerSet" transform="rotate(270)"/>
-        <use xlink:href="#markerSet" transform="rotate(300)"/>
-        <use xlink:href="#markerSet" transform="rotate(330)"/>
-
-        <line x1="0" y1="-95" x2="0" y2="0" id="minuteHand" transform="rotate(36)"/>
-        <line x1="0" y1="-62" x2="0" y2="0" id="hourHand" transform="rotate(213)"/>
-        <line x1="0" y1="-62" x2="0" y2="20" id="secondHand" transform="rotate(90)"/>
-
-        <circle cx="0" cy="0" r="9" id="centerMarker"/>
-    </svg>
+    <ui:insert>
+        <ui:include src="footer.xhtml"/>
+    </ui:insert>
 </h:body>
 
 </html>

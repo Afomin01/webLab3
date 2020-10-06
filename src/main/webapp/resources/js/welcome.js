@@ -1,13 +1,13 @@
 $(function() {
     setClockHands();
-    setInterval(setClockHands, 1000);
+    setInterval(setClockHands, 5000);
 });
 
 function setClockHands() {
     const date = new Date;
 
     const hourAngle = 30 * ((date.getHours() % 12) + (date.getMinutes() / 60));
-    const minuteAngle = 6 * date.getMinutes();
+    const minuteAngle = (60 * date.getMinutes() + date.getSeconds())/10;
     const secondAngle = 6 * date.getSeconds();
 
     $('#clock > #hourHand').attr('transform', `rotate(${hourAngle})`);
