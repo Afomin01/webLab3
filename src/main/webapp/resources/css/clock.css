@@ -14,22 +14,17 @@
     fill: var(--clock-color);
 }
 
-#hourHand {
+.hourHand {
     stroke-width: 5;
     stroke: var(--clock-color);
 }
 
-#minuteHand {
+.minuteHand {
     stroke-width: 2.8;
     stroke: var(--clock-color);
 }
 
-#minuteHand {
-    stroke-width: 2.8;
-    stroke: var(--clock-color);
-}
-
-#secondHand {
+.secondHand {
     stroke-width: 1.8;
     stroke: red;
 }
