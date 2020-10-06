@@ -1,7 +1,27 @@
-#client-time{
+#client-date{
     width: 30%;
+}
+#server-date{
+    width: 30%;
+
 }
 .clock-sign{
     text-align: center;
     font-size: xx-large;
+}
+#redirect-form{
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+#redirect-from-div{
+    width: 40%;
+    text-align: center;
+    display: table;
+    height: 100%;
+}
+#clocks-redirect-div{
+    display: flex;
+    flex-direction: row;
+    height: 600px;
 }
