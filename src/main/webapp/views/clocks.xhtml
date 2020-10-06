@@ -2,7 +2,7 @@
 <ui:composition
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <svg id="clock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500" viewBox="-100 -100 200 200">
+    <svg class="clock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500" viewBox="-100 -100 200 200">
 
         <defs>
             <circle cx="0" cy="87" r="2.2" id="minMarker"/>
@@ -34,4 +34,9 @@
 
         <circle cx="0" cy="0" r="9" id="centerMarker"/>
     </svg>
+
+    <div>
+        <div class="text-time">00:00:00</div>
+        <div class="text-date">01.01.01</div>
+    </div>
 </ui:composition>

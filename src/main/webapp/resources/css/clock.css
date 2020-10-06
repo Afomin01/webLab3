@@ -33,3 +33,15 @@
     stroke-width: 1.8;
     stroke: red;
 }
+.text-time{
+    font-size: xx-large;
+    text-align: center;
+}
+.text-date{
+    font-size: large;
+    text-align: center;
+}
+.clock{
+    display: block;
+    margin: auto;
+}

@@ -22,11 +22,17 @@
     </ui:insert>
 
     <div id="main">
-        <ui:insert>
-            <ui:include src="clocks.xhtml"/>
-        </ui:insert>
+        <div id="client-time">
+            <div class="clock-sign">Client time</div>
+            <ui:insert>
+                <ui:include src="clocks.xhtml"/>
+            </ui:insert>
+        </div>
     </div>
 
+    <h:form>
+        <h:commandButton label="Go shoot" action="toMain"/>
+    </h:form>
     <ui:insert>
         <ui:include src="footer.xhtml"/>
     </ui:insert>
