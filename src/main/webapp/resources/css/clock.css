@@ -1,0 +1,35 @@
+:root{
+    --clock-color: black;
+}
+#minMarker {
+    fill: var(--clock-color);
+}
+
+#hourMarker {
+    stroke-width: 3.8;
+    stroke: var(--clock-color);
+}
+
+#centerMarker {
+    fill: var(--clock-color);
+}
+
+#hourHand {
+    stroke-width: 5;
+    stroke: var(--clock-color);
+}
+
+#minuteHand {
+    stroke-width: 2.8;
+    stroke: var(--clock-color);
+}
+
+#minuteHand {
+    stroke-width: 2.8;
+    stroke: var(--clock-color);
+}
+
+#secondHand {
+    stroke-width: 1.8;
+    stroke: red;
+}
