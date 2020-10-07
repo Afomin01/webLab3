@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui:composition
-        xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <svg height="600" width="600" viewBox="-35 -35 420 420" xmlns="http://www.w3.org/2000/svg" id="graph">
-        <path d="M175 175 175 280 A105 105 0 0 1 70 175Z" class="figure-shape3 svg-shape"/>
+<!DOCTYPE html>
 
-        <polygon points="227.5,175 227.5,280 175,280 175,175" class="figure-shape2 svg-shape"/>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+    <ui:composition>
+        <svg height="600" width="600" viewBox="-35 -35 420 420" xmlns="http://www.w3.org/2000/svg" id="graph">
 
-        <polygon points="175,175 122.5,175 175,70" class="figure-shape1 svg-shape"/>
+            <path d="M175 175 175 280 A105 105 0 0 1 70 175Z" class="figure-shape3 svg-shape"/>
 
-        <line x1="171" y1="70" x2="179" y2="70" class="figure-axis-dash"/>
-        <line x1="171" y1="122.5" x2="179" y2="122.5" class="figure-axis-dash"/>
-        <line x1="171" y1="227.5" x2="179" y2="227.5" class="figure-axis-dash"/>
-        <line x1="171" y1="280" x2="179" y2="280" class="figure-axis-dash"/>
+            <polygon points="227.5,175 227.5,280 175,280 175,175" class="figure-shape2 svg-shape"/>
 
-        <polygon points="385,175 370,170 370,180" class="figure-axis-arrow"/>
-        <polygon points="175,-35 180,-20 170,-20" class="figure-axis-arrow"/>
+            <polygon points="175,175 122.5,175 175,70" class="figure-shape1 svg-shape"/>
 
-        <line x1="-35" y1="175" x2="385" y2="175" class="figure-axis"/>
-        <line x1="175" y1="385" x2="175" y2="-35" class="figure-axis"/>
+            <line x1="171" y1="70" x2="179" y2="70" class="figure-axis-dash"/>
+            <line x1="171" y1="122.5" x2="179" y2="122.5" class="figure-axis-dash"/>
+            <line x1="171" y1="227.5" x2="179" y2="227.5" class="figure-axis-dash"/>
+            <line x1="171" y1="280" x2="179" y2="280" class="figure-axis-dash"/>
 
-        <line y1="171" x1="280" y2="179" x2="280" class="figure-axis-dash"/>
-        <line y1="171" x1="227.5" y2="179" x2="227.5" class="figure-axis-dash"/>
-        <line y1="171" x1="122.5" y2="179" x2="122.5" class="figure-axis-dash"/>
-        <line y1="171" x1="70" y2="179" x2="70" class="figure-axis-dash"/>
+            <polygon points="385,175 370,170 370,180" class="figure-axis-arrow"/>
+            <polygon points="175,-35 180,-20 170,-20" class="figure-axis-arrow"/>
 
-        <text x="182" y="-24" class="figure-axis-text" style="font-size: medium;">y</text>
-        <text x="370" y="167" class="figure-axis-text" style="font-size: medium;">x</text>
+            <line x1="-35" y1="175" x2="385" y2="175" class="figure-axis"/>
+            <line x1="175" y1="385" x2="175" y2="-35" class="figure-axis"/>
 
-        <text x="185" y="73.5" class="figure-axis-text">R</text>
-        <text x="185" y="126" class="figure-axis-text">R/2</text>
-        <text x="185" y="231" class="figure-axis-text">-R/2</text>
-        <text x="185" y="283.5" class="figure-axis-text">-R</text>
+            <line y1="171" x1="280" y2="179" x2="280" class="figure-axis-dash"/>
+            <line y1="171" x1="227.5" y2="179" x2="227.5" class="figure-axis-dash"/>
+            <line y1="171" x1="122.5" y2="179" x2="122.5" class="figure-axis-dash"/>
+            <line y1="171" x1="70" y2="179" x2="70" class="figure-axis-dash"/>
 
-        <text x="70" y="167" text-anchor="middle" class="figure-axis-text">-R</text>
-        <text x="122.5" y="167" text-anchor="middle" class="figure-axis-text">-R/2</text>
-        <text x="227.5" y="167" text-anchor="middle" class="figure-axis-text">R/2</text>
-        <text x="280" y="167" text-anchor="middle" class="figure-axis-text">R</text>
+            <text x="182" y="-24" class="figure-axis-text" style="font-size: medium;">y</text>
+            <text x="370" y="167" class="figure-axis-text" style="font-size: medium;">x</text>
 
-    </svg>
-</ui:composition>
+            <text x="185" y="73.5" class="figure-axis-text">R</text>
+            <text x="185" y="126" class="figure-axis-text">R/2</text>
+            <text x="185" y="231" class="figure-axis-text">-R/2</text>
+            <text x="185" y="283.5" class="figure-axis-text">-R</text>
+
+            <text x="70" y="167" text-anchor="middle" class="figure-axis-text">-R</text>
+            <text x="122.5" y="167" text-anchor="middle" class="figure-axis-text">-R/2</text>
+            <text x="227.5" y="167" text-anchor="middle" class="figure-axis-text">R/2</text>
+            <text x="280" y="167" text-anchor="middle" class="figure-axis-text">R</text>
+
+        </svg>
+    </ui:composition>
+</body>
+</html>

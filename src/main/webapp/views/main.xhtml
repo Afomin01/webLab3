@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
@@ -39,13 +40,13 @@
                                 <td>
                                     <h:commandButton value="-2" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
                                         <f:setPropertyActionListener target="#{entryBean.x}" value="-2"/>
-                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage result-table"/>
                                     </h:commandButton>
                                 </td>
                                 <td>
                                     <h:commandButton value="-1" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
                                         <f:setPropertyActionListener target="#{entryBean.x}" value="-1"/>
-                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage result-table"/>
                                     </h:commandButton>
                                 </td>
                             </tr>
@@ -53,19 +54,19 @@
                                 <td>
                                     <h:commandButton value="0" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
                                         <f:setPropertyActionListener target="#{entryBean.x}" value="0"/>
-                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage result-table"/>
                                     </h:commandButton>
                                 </td>
                                 <td>
                                     <h:commandButton value="1" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
                                         <f:setPropertyActionListener target="#{entryBean.x}" value="1"/>
-                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage result-table"/>
                                     </h:commandButton>
                                 </td>
                                 <td>
                                     <h:commandButton value="2" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
                                         <f:setPropertyActionListener target="#{entryBean.x}" value="2"/>
-                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage result-table"/>
                                     </h:commandButton>
                                 </td>
                             </tr>
@@ -73,19 +74,19 @@
                                 <td>
                                     <h:commandButton value="3" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
                                         <f:setPropertyActionListener target="#{entryBean.x}" value="3"/>
-                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage result-table"/>
                                     </h:commandButton>
                                 </td>
                                 <td>
                                     <h:commandButton value="4" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
                                         <f:setPropertyActionListener target="#{entryBean.x}" value="4"/>
-                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage result-table"/>
                                     </h:commandButton>
                                 </td>
                                 <td>
                                     <h:commandButton value="5" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
                                         <f:setPropertyActionListener target="#{entryBean.x}" value="5"/>
-                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage result-table"/>
                                     </h:commandButton>
                                 </td>
                             </tr>
@@ -112,7 +113,7 @@
             </div>
         </div>
         <div>
-            <p:dataTable var="hit" value="#{entryBean.entries}" id="result-table">
+            <p:dataTable var="hit" value="#{entryBean.entries}" id="result-table" styleClass="result-table">
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="X" />

@@ -2,7 +2,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "LAB3_HITS")
-public class Lab3Hits {
+public class EntryEntity {
 
     @Id @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,10 +20,10 @@ public class Lab3Hits {
     @Column(name = "HIT")
     private int hit;
 
-    public Lab3Hits() {
+    public EntryEntity() {
     }
 
-    public Lab3Hits(double x, double y, double r, int hit) {
+    public EntryEntity(double x, double y, double r, int hit) {
         this.x = x;
         this.y = y;
         this.r = r;

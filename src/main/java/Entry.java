@@ -8,9 +8,14 @@ public class Entry {
     }
 
     public void check(){
-        result=true;
+        if(x>0 && y>0) result=false;
+        else if(x<0 && y>0) result = y < 2*x+r;
+        else if(x<0 && y<0) result = x*x+y*y<r;
+        else if(x>0 && y<0)result = x<r/2 && y<-r;
+        else if(x==0) result = y<r && y>-r;
+        else if(y==0) result=x<r/2&&x>-r;
+        else result=false;
     }
-
 
     public double getX() {
         return x;

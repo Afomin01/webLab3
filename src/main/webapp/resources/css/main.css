@@ -31,7 +31,7 @@
     justify-content: center;
     align-items: center;
 }
-#result-table{
+.result-table{
     table-layout: fixed;
     width: 70%;
     margin: 40px 15% 0 15%;
@@ -42,16 +42,16 @@
 .input-div > label{
     margin-bottom: 10px;
 }
-#buttons-table{
-
+.result-table{
+    color: white;
 }
-#result-table th{
+.result-table th{
     background: #090909;
     height: 50px;
     border: 1px solid white;
     width: 25%;
 }
-#result-table td{
+.result-table td{
     height: 50px;
     text-align: center;
     background: #151515;
