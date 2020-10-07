@@ -1,11 +1,7 @@
 $(function() {
-    let t = getServerTime();
-
     setClockHands('client-date', new Date);
-    setClockHands('server-date', new Date(t));
     setInterval(() => setClockHands('client-date', new Date), 5000);
-    setInterval(() => setClockHands('server-date', new Date(getServerTime())), 5000);
-
+    setServerDate();
 });
 
 function setClockHands(id, date) {
@@ -30,14 +26,37 @@ function setClockHands(id, date) {
     $(`#${id} .text-time`).text(timeText);
     $(`#${id} .text-date`).text(dateText);
 }
-function getServerTime() {
-    let t;
+
+var attempt = 0;
+function setServerDate() {
     $.ajax({
-        async: false,
         type:"GET",
-        success: function(output, status, xhr) {
-            t = xhr.getResponseHeader("Date");
+        success: (output, status, xhr) => {
+            let serverDate = new Date(xhr.getResponseHeader("Date"));
+
+            if (isNaN(serverDate.getTime())) {
+                noValidServerDate()
+            } else {
+                $('#server-date svg').removeClass('blur');
+                setClockHands('server-date', serverDate);
+                setInterval(() => {
+                    serverDate.setSeconds(serverDate.getSeconds() + 5);
+                    setClockHands('server-date', serverDate) }, 5000);
+            }
         },
+        error: (xhr, status, error) => {
+            noValidServerDate()
+        }
     })
-    return t;
+}
+
+function noValidServerDate() {
+    $('#server-date svg').addClass('blur');
+    $('#server-date .text-time').html('Сервер');
+    $('#server-date .text-date').html('не отвечает');
+
+    if (attempt < 3) {
+        attempt++;
+        setServerDate();
+    }
 }
