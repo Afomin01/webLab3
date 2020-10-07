@@ -1,0 +1,37 @@
+#graph-form-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#graph-form-div > *{
+    margin: 0 20px;
+}
+#main{
+    display: flex;
+    flex-direction: column;
+}
+#graph-form{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: #181818;
+    border-radius: 10px;
+    height: 400px;
+}
+#graph-form > *{
+    margin: auto 0;
+}
+.input-div{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+#result-table{
+    table-layout: fixed;
+    width: 70%;
+    margin: 40px 15% 0 15%;
+    border-spacing: 2px;
+    border: 2px solid white;
+    border-collapse: collapse;
+}

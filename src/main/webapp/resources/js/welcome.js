@@ -44,16 +44,13 @@ function setServerDate() {
                     setClockHands('server-date', serverDate) }, 5000);
             }
         },
-        error: (xhr, status, error) => {
-            noValidServerDate()
-        }
     })
 }
 
 function noValidServerDate() {
     $('#server-date svg').addClass('blur');
-    $('#server-date .text-time').html('Сервер');
-    $('#server-date .text-date').html('не отвечает');
+    $('#server-date .text-time').html('Server');
+    $('#server-date .text-date').html('error');
 
     if (attempt < 3) {
         attempt++;
