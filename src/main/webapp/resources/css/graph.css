@@ -1,0 +1,108 @@
+#graph{
+    margin: 15px auto;
+    display: block;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+    -o-user-select:none;
+}
+.svg-shape{
+    stroke-width: 2px;
+    fill-opacity: 0;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw-lines 3s linear forwards;
+}
+.figure-shape1 {
+    fill: #cf1a1a;
+    stroke: #cf1a1a;
+}
+
+.figure-shape2 {
+    fill: darkorange;
+    stroke: darkorange;
+}
+
+.figure-shape3 {
+    fill: #d9d901;
+    stroke: #d9d901;
+}
+
+.figure-shape4 {
+    fill: forestgreen;
+    stroke: forestgreen;
+}
+
+.figure-shape5 {
+    fill: #1e2cbe;
+    stroke: #1e2cbe;
+}
+
+.figure-axis {
+    stroke-width: 2px;
+    stroke: white;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw-anim 2.5s linear forwards;
+}
+
+.figure-axis-arrow {
+    stroke: white;
+    stroke-width: 2px;
+    fill: white;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    fill-opacity: 0;
+    animation: draw-anim 2s linear forwards;
+}
+
+.figure-axis-dash {
+    stroke-width: 2px;
+    stroke: white;
+    stroke-dasharray: 10;
+    stroke-dashoffset: 10;
+    animation: draw-anim 1s linear forwards;
+}
+
+.figure-axis-text {
+    fill-opacity: 0;
+    fill: white;
+    font-size: small;
+    animation: draw-anim 2.5s linear forwards;
+}
+.generated-circle{
+    fill: white;
+}
+.generated-form-circle{
+    fill: #ffa7a7;
+}
+.placed-circle-hit{
+    fill: #3b993b;
+}
+.placed-circle-miss{
+    fill: #cf1a1a;
+}
+.placed-circle{
+    fill: #ffffff;
+}
+
+@keyframes draw-anim {
+    50% {
+        fill-opacity: 0.8;
+    }
+    80% {
+        fill-opacity: 0.9;
+    }
+    to {
+        fill-opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes draw-lines {
+    to {
+        stroke-dashoffset: 0;
+    }
+
+}
