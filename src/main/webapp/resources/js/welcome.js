@@ -44,9 +44,6 @@ function setServerDate() {
                     setClockHands('server-date', serverDate) }, 5000);
             }
         },
-        error: (xhr, status, error) => {
-            noValidServerDate()
-        }
     })
 }
 
