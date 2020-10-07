@@ -18,14 +18,18 @@
     background: #181818;
     border-radius: 10px;
     height: 400px;
+    width: 300px;
+    text-align: center;
 }
 #graph-form > *{
-    margin: auto 0;
+    margin: 20px auto;
 }
 .input-div{
     display: flex;
     flex-direction: column;
     margin: 5px 0;
+    justify-content: center;
+    align-items: center;
 }
 #result-table{
     table-layout: fixed;
@@ -35,3 +39,84 @@
     border: 2px solid white;
     border-collapse: collapse;
 }
+.input-div > label{
+    margin-bottom: 10px;
+}
+#buttons-table{
+
+}
+#result-table th{
+    background: #090909;
+    height: 50px;
+    border: 1px solid white;
+    width: 25%;
+}
+#result-table td{
+    height: 50px;
+    text-align: center;
+    background: #151515;
+    border: 1px solid white;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    padding: 5px;
+}
+.command-button{
+    width: 50px;
+    color: white;
+    border: 2px solid #00a109;
+    height: 25px;
+    transition: 1s all ease;
+    background: #090909;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+.command-button:hover {
+    background: #00a109;
+}
+.command-button:active{
+    background: yellow;
+}
+.input-text{
+    width: 150px;
+    margin-bottom: 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #00b621;
+    color: white;
+    line-height: 2em;
+    outline: none;
+}
+.input-text:active{
+    outline: none;
+}
+.input-text:focus::-webkit-input-placeholder{
+    transform: translateY(-10px);
+    font-size: xx-small;
+    transition: all 0.3s ease-in-out;
+}
+.select-menu{
+    cursor: pointer;
+    width: 180px;
+    height: 30px;
+    outline: none;
+    color: white;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    max-width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #090909;
+    background-image: url("#{resource['images/select-arrow.svg']}");
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+.select-menu:focus {
+     box-shadow: 0 0 1px 2px rgb(143, 143, 143);
+     outline: none;
+ }

@@ -3,7 +3,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://java.sun.com/jsf/html">
 
 <h:head>
     <title>Title</title>
@@ -26,52 +27,80 @@
             <div>
                 <h:form id="graph-form">
                     <div class="input-div">
-                        <label>Select X Value</label>
-                        <h:commandButton value="-3">
-                            <f:setPropertyActionListener target="#{entryBean.x}" value="-3"/>
-                            <f:ajax execute="YText RSelect" render="YMessage"/>
-                        </h:commandButton>
-                        <h:commandButton value="-2">
-                            <f:setPropertyActionListener target="#{entryBean.x}" value="-2"/>
-                            <f:ajax execute="YText RSelect" render="YMessage"/>
-                        </h:commandButton>
-                        <h:commandButton value="-1">
-                            <f:setPropertyActionListener target="#{entryBean.x}" value="-1"/>
-                            <f:ajax execute="YText RSelect" render="YMessage"/>
-                        </h:commandButton>
-                        <h:commandButton value="0">
-                            <f:setPropertyActionListener target="#{entryBean.x}" value="0"/>
-                            <f:ajax execute="YText RSelect" render="YMessage"/>
-                        </h:commandButton>
-                        <h:commandButton value="1">
-                            <f:setPropertyActionListener target="#{entryBean.x}" value="1"/>
-                            <f:ajax execute="YText RSelect" render="YMessage"/>
-                        </h:commandButton>
-                        <h:commandButton value="2">
-                            <f:setPropertyActionListener target="#{entryBean.x}" value="2"/>
-                            <f:ajax execute="YText RSelect" render="YMessage"/>
-                        </h:commandButton>
-                        <h:commandButton value="3">
-                            <f:setPropertyActionListener target="#{entryBean.x}" value="3"/>
-                            <f:ajax execute="YText RSelect" render="YMessage"/>
-                        </h:commandButton>
-                        <h:commandButton value="4">
-                            <f:setPropertyActionListener target="#{entryBean.x}" value="4"/>
-                            <f:ajax execute="YText RSelect" render="YMessage"/>
-                        </h:commandButton>
-                        <h:commandButton value="5">
-                            <f:setPropertyActionListener target="#{entryBean.x}" value="5"/>
-                            <f:ajax execute="YText RSelect" render="YMessage"/>
-                        </h:commandButton>
+                        <label>Press one X button to check hit result</label>
+                        <table id="buttons-table">
+                            <tr>
+                                <td>
+                                    <h:commandButton value="-3" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
+                                        <f:setPropertyActionListener target="#{entryBean.x}" value="-3"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage result-table"/>
+                                    </h:commandButton>
+                                </td>
+                                <td>
+                                    <h:commandButton value="-2" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
+                                        <f:setPropertyActionListener target="#{entryBean.x}" value="-2"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                    </h:commandButton>
+                                </td>
+                                <td>
+                                    <h:commandButton value="-1" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
+                                        <f:setPropertyActionListener target="#{entryBean.x}" value="-1"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                    </h:commandButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:commandButton value="0" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
+                                        <f:setPropertyActionListener target="#{entryBean.x}" value="0"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                    </h:commandButton>
+                                </td>
+                                <td>
+                                    <h:commandButton value="1" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
+                                        <f:setPropertyActionListener target="#{entryBean.x}" value="1"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                    </h:commandButton>
+                                </td>
+                                <td>
+                                    <h:commandButton value="2" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
+                                        <f:setPropertyActionListener target="#{entryBean.x}" value="2"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                    </h:commandButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:commandButton value="3" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
+                                        <f:setPropertyActionListener target="#{entryBean.x}" value="3"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                    </h:commandButton>
+                                </td>
+                                <td>
+                                    <h:commandButton value="4" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
+                                        <f:setPropertyActionListener target="#{entryBean.x}" value="4"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                    </h:commandButton>
+                                </td>
+                                <td>
+                                    <h:commandButton value="5" styleClass="command-button" action="#{entryBean.addCurrentEntry}">
+                                        <f:setPropertyActionListener target="#{entryBean.x}" value="5"/>
+                                        <f:ajax execute="YText RSelect" render="YMessage"/>
+                                    </h:commandButton>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="input-div">
-                        <label>Select Y Value</label>
-                        <h:inputText id="YText" converter="javax.faces.BigDecimal" required="true" requiredMessage="You must enter Y value" converterMessage="Y must be a number in range (-5;5)" validatorMessage="Y must be a decimal number in range (-5;5)"/>
-                        <h:message id="YMessage" for="YText"/>
+                        <label>Enter Y Value</label>
+                        <h:inputText styleClass="input-text" id="YText" value="#{entryBean.y}" converter="javax.faces.BigDecimal" required="true" requiredMessage="You must enter Y value" converterMessage="Y must be a number in range (-5;5)" validatorMessage="Y must be a decimal number in range (-5;5)">
+                            <f:validator validatorId="YValueValidator"/>
+                        </h:inputText>
+                        <h:message id="YMessage" for="YText" styleClass="error-message"/>
                     </div>
                     <div class="input-div">
                         <label>Select R Value</label>
-                        <h:selectOneMenu id="RSelect" required="true">
+                        <h:selectOneMenu id="RSelect" required="true" styleClass="select-menu" value="#{entryBean.r}">
                             <f:selectItem itemValue="1" itemLabel="1"/>
                             <f:selectItem itemValue="1.5" itemLabel="1.5"/>
                             <f:selectItem itemValue="2" itemLabel="2"/>
@@ -83,14 +112,32 @@
             </div>
         </div>
         <div>
-            <table id="result-table">
-                <tr>
-                    <th>X</th>
-                    <th>Y</th>
-                    <th>R</th>
-                    <th>Result</th>
-                </tr>
-            </table>
+            <p:dataTable var="hit" value="#{entryBean.entries}" id="result-table">
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="X" />
+                    </f:facet>
+                    <h:outputText value="#{hit.x}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Y" />
+                    </f:facet>
+                    <h:outputText value="#{hit.y}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="R" />
+                    </f:facet>
+                    <h:outputText value="#{hit.r}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Result" />
+                    </f:facet>
+                    <h:outputText value="#{hit.result}" />
+                </p:column>
+            </p:dataTable>
         </div>
     </div>
     <ui:include src="footer.xhtml"/>

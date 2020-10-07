@@ -7,6 +7,11 @@ public class Entry {
     public Entry() {
     }
 
+    public void check(){
+        result=true;
+    }
+
+
     public double getX() {
         return x;
     }

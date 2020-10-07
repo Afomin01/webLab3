@@ -32,22 +32,6 @@ footer{
 footer div{
     margin: 10px;
 }
-th{
-    background: #090909;
-    height: 50px;
-    border: 1px solid white;
-    width: 25%;
-}
-td{
-    height: 50px;
-    text-align: center;
-    background: #151515;
-    border: 1px solid white;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    padding: 5px;
-}
 #names-sign{
     width: 30%;
 }
@@ -77,4 +61,8 @@ td{
     -o-filter: blur(5px);
     -ms-filter: blur(5px);
     filter: blur(5px);
+}
+.error-message{
+    color: crimson;
+    min-height: 1em;
 }
