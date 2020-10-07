@@ -10,34 +10,24 @@
 }
 .svg-shape{
     stroke-width: 2px;
-    fill-opacity: 0;
+    fill-opacity: 1;
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     animation: draw-lines 3s linear forwards;
 }
 .figure-shape1 {
-    fill: #cf1a1a;
-    stroke: #cf1a1a;
+    fill: crimson;
+    stroke: crimson;
 }
 
 .figure-shape2 {
-    fill: darkorange;
-    stroke: darkorange;
+    fill: crimson;
+    stroke: crimson;
 }
 
 .figure-shape3 {
-    fill: #d9d901;
-    stroke: #d9d901;
-}
-
-.figure-shape4 {
-    fill: forestgreen;
-    stroke: forestgreen;
-}
-
-.figure-shape5 {
-    fill: #1e2cbe;
-    stroke: #1e2cbe;
+    fill: crimson;
+    stroke: crimson;
 }
 
 .figure-axis {
