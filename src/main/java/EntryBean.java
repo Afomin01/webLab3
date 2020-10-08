@@ -30,7 +30,7 @@ public class EntryBean {
         if(x>0 && y>0) return false;
         else if(x<0 && y>0) return y < 2*x+r;
         else if(x<0 && y<0) return x*x+y*y<r;
-        else if(x>0 && y<0) return x<r/2 && y<-r;
+        else if(x>0 && y<0) return x<r/2 && y>-r;
         else if(x==0) return y<r && y>-r;
         else if(y==0) return x<r/2&&x>-r;
         else return false;
