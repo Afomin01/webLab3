@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-<body>
-    <ui:composition>
-        <svg height="600" width="600" viewBox="-35 -35 420 420" xmlns="http://www.w3.org/2000/svg" id="graph">
-
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets">
+<svg height="600" width="600" viewBox="-35 -35 420 420" id="graph">
             <path d="M175 175 175 280 A105 105 0 0 1 70 175Z" class="figure-shape3 svg-shape"/>
 
             <polygon points="227.5,175 227.5,280 175,280 175,175" class="figure-shape2 svg-shape"/>
@@ -42,7 +36,8 @@
             <text x="227.5" y="167" text-anchor="middle" class="figure-axis-text">R/2</text>
             <text x="280" y="167" text-anchor="middle" class="figure-axis-text">R</text>
 
-        </svg>
-    </ui:composition>
-</body>
-</html>
+            <ui:repeat var="entry" value="#{entryBean.entries}">
+                <circle cx="#{entry.x}" cy="#{entry.x}" r ="4"/>
+            </ui:repeat>
+</svg>
+</ui:composition>
