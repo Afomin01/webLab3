@@ -1,6 +1,7 @@
 const fixedDigits = 7;
 
 $(function() {
+        $("#j_idt19").click();
         $('#graph-click-form').on('mousedown', (event) => {
         let r = parseFloat($("#graph-form\\:RSelect").val());
         console.log(r);
