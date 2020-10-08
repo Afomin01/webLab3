@@ -15,17 +15,7 @@
     stroke-dashoffset: 1000;
     animation: draw-lines 3s linear forwards;
 }
-.figure-shape1 {
-    fill: crimson;
-    stroke: crimson;
-}
-
-.figure-shape2 {
-    fill: crimson;
-    stroke: crimson;
-}
-
-.figure-shape3 {
+.figure-shape {
     fill: crimson;
     stroke: crimson;
 }
