@@ -1,16 +1,16 @@
 const fixedDigits = 7;
 
 $(function() {
-    $('#graph').on('mousedown', (event) => {
-        let r = parseFloat($("#RSelect option:selected").text());
+        $('#graph-click-form').on('mousedown', (event) => {
+        let r = parseFloat($("#graph-form\\:RSelect").val());
         console.log(r);
         let svg = document.getElementById('graph');
         let pt = svg.createSVGPoint();
         pt.x = event.clientX;
         pt.y = event.clientY;
         pt = pt.matrixTransform(svg.getScreenCTM().inverse());
-        let x = (140/r)*pt.x+175;
-        let y = (140/r)*(-pt.y)+175;
+        let x = ((pt.x-175)*r)/140;
+        let y = -((pt.y-175)*r)/140;
 
         $("#graph-x").val(x.toFixed(fixedDigits));
         $("#graph-y").val(y.toFixed(fixedDigits));
