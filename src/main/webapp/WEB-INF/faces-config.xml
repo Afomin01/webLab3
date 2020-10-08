@@ -22,4 +22,23 @@
         </navigation-case>
     </navigation-rule>
 
+    <navigation-rule>
+        <from-view-id>/views/main.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>toMain</from-outcome>
+            <to-view-id>/views/main.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/views/main.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>toWelcome</from-outcome>
+            <to-view-id>/views/welcome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+
 </faces-config>

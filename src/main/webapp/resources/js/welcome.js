@@ -30,7 +30,7 @@ function setClockHands(id, date) {
 var attempt = 0;
 function setServerDate() {
     $.ajax({
-        type:"GET",
+        type:"HEAD",
         success: (output, status, xhr) => {
             let serverDate = new Date(xhr.getResponseHeader("Date"));
 

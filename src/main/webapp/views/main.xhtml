@@ -28,10 +28,10 @@
                     <ui:include src="graph.xhtml"/>
                     <h:inputHidden id="graph-x" value="#{entryBean.x}" />
                     <h:inputHidden id="graph-y" value="#{entryBean.y}" />
+                    <h:commandButton style="display: none; width: 0; height: 0;" action="#{entryBean.addCurrentEntry}">
+                        <f:ajax id="graph-click-ajax" execute="graph-x graph-y" render="result-table graph" />
+                    </h:commandButton>
                 </form>
-                <h:commandButton style="display: none" action="#{entryBean.addCurrentEntry}">
-                    <f:ajax id="graph-click-ajax" execute="@this graph-x graph-y" render="@this result-table graph" />
-                </h:commandButton>
             </div>
             <div>
                 <h:form id="graph-form">
