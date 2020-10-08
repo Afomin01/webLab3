@@ -19,9 +19,21 @@ public class EntryBean {
     }
 
     public void addCurrentEntry(){
-        entry.check();
+        double tempR = entry.getR();
+        entry.setResult(check(entry.getX(), entry.getY(), entry.getR()));
         entries.add(entry);
         entry = new Entry();
+        entry.setR(tempR);
+    }
+
+    public boolean check(double x, double y, double r){
+        if(x>0 && y>0) return false;
+        else if(x<0 && y>0) return y < 2*x+r;
+        else if(x<0 && y<0) return x*x+y*y<r;
+        else if(x>0 && y<0) return x<r/2 && y<-r;
+        else if(x==0) return y<r && y>-r;
+        else if(y==0) return x<r/2&&x>-r;
+        else return false;
     }
 
     public EntryBean() {

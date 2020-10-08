@@ -3,9 +3,7 @@
                 xmlns:jsf="http://xmlns.jcp.org/jsf">
 <svg height="600" width="600" viewBox="-35 -35 420 420" jsf:id="graph" id="graph">
             <path d="M175 175 175 280 A105 105 0 0 1 70 175Z" class="figure-shape3 svg-shape"/>
-
             <polygon points="227.5,175 227.5,280 175,280 175,175" class="figure-shape2 svg-shape"/>
-
             <polygon points="175,175 122.5,175 175,70" class="figure-shape1 svg-shape"/>
 
             <line x1="171" y1="70" x2="179" y2="70" class="figure-axis-dash"/>
@@ -27,18 +25,18 @@
             <text x="182" y="-24" class="figure-axis-text" style="font-size: medium;">y</text>
             <text x="370" y="167" class="figure-axis-text" style="font-size: medium;">x</text>
 
-            <text x="185" y="73.5" class="figure-axis-text">R</text>
-            <text x="185" y="126" class="figure-axis-text">R/2</text>
-            <text x="185" y="231" class="figure-axis-text">-R/2</text>
-            <text x="185" y="283.5" class="figure-axis-text">-R</text>
+            <text x="185" y="73.5" class="figure-axis-text">#{entryBean.r}</text>
+            <text x="185" y="126" class="figure-axis-text">#{entryBean.r/2}</text>
+            <text x="185" y="231" class="figure-axis-text">#{-entryBean.r/2}</text>
+            <text x="185" y="283.5" class="figure-axis-text">#{-entryBean.r}</text>
 
-            <text x="70" y="167" text-anchor="middle" class="figure-axis-text">-R</text>
-            <text x="122.5" y="167" text-anchor="middle" class="figure-axis-text">-R/2</text>
-            <text x="227.5" y="167" text-anchor="middle" class="figure-axis-text">R/2</text>
-            <text x="280" y="167" text-anchor="middle" class="figure-axis-text">R</text>
+            <text x="70" y="167" text-anchor="middle" class="figure-axis-text">#{-entryBean.r}</text>
+            <text x="122.5" y="167" text-anchor="middle" class="figure-axis-text">#{-entryBean.r/2}</text>
+            <text x="227.5" y="167" text-anchor="middle" class="figure-axis-text">#{entryBean.r/2}</text>
+            <text x="280" y="167" text-anchor="middle" class="figure-axis-text">#{entryBean.r}</text>
 
             <ui:repeat var="entry" value="#{entryBean.entries}">
-                <circle cx="#{entry.x}" cy="#{entry.x}" r ="4"/>
+                <circle cx="#{35*entry.x+175}" cy="#{35*(-entry.y)+175}" r ="4" fill="#{entryBean.check(entry.x, entry.y, entryBean.r) ? 'green' : 'red'}"/>
             </ui:repeat>
 </svg>
 </ui:composition>
