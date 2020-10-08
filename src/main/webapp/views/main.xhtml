@@ -14,6 +14,7 @@
     <h:outputStylesheet name="css/graph.css"/>
 
     <h:outputScript name="js/jQuery.js" />
+    <h:outputScript name="js/main.js" />
 
     <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"/>
 </h:head>
@@ -23,7 +24,12 @@
     <div id="main">
         <div id="graph-form-div">
             <div>
-                <ui:include src="graph.xhtml"/>
+                <form id="graph-click-form">
+                    <ui:include src="graph.xhtml"/>
+                    <h:inputHidden id="graph-x" value="#{entryBean.x}" />
+                    <h:inputHidden id="graph-y" value="#{entryBean.y}" />
+                    <f:ajax id="graph-click-ajax" event="click" execute="x y" render="result-table graph" listener="#{entryBean.addCurrentEntry}" />
+                </form>
             </div>
             <div>
                 <h:form id="graph-form">

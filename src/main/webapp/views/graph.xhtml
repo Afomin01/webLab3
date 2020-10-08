@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:jsf="http://xmlns.jcp.org/jsf">
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:f="http://java.sun.com/jsf/core">
 <svg height="600" width="600" viewBox="-35 -35 420 420" jsf:id="graph" id="graph">
             <path d="M175 175 175 280 A105 105 0 0 1 70 175Z" class="figure-shape3 svg-shape"/>
             <polygon points="227.5,175 227.5,280 175,280 175,175" class="figure-shape2 svg-shape"/>
@@ -38,5 +39,6 @@
             <ui:repeat var="entry" value="#{entryBean.entries}">
                 <circle cx="#{35*entry.x+175}" cy="#{35*(-entry.y)+175}" r ="4" fill="#{entryBean.check(entry.x, entry.y, entryBean.r) ? 'green' : 'red'}"/>
             </ui:repeat>
+
 </svg>
 </ui:composition>
