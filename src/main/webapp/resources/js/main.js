@@ -14,5 +14,6 @@ $(function() {
 
         $("#graph-x").val(x.toFixed(fixedDigits));
         $("#graph-y").val(y.toFixed(fixedDigits));
+        $("#j_idt19").click();
     });
 });
