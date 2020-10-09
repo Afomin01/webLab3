@@ -65,7 +65,7 @@ public class EntryBean {
         this.entry = new Entry();
         entry.setR(1);
 
-        entries = EntryDao.getAllClientRows(clientId);
+        //entries = EntryDao.getAllClientRows(clientId);
     }
 
     public double getX() {

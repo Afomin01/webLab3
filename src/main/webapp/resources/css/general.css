@@ -55,6 +55,8 @@ footer div{
 #names-sign{
     width: 30%;
     padding: 0 0 0 15px;
+    height: 100%;
+    display: table;
 }
 #variant-sign{
     display: table;
@@ -63,7 +65,7 @@ footer div{
     text-align: right;
     padding: 0 15px 0 0;
 }
-#variant-sign > div{
+#variant-sign > div, #names-sign > div{
     display: table-cell;
     vertical-align: middle;
 }
@@ -89,11 +91,11 @@ footer div{
     min-height: 1em;
 }
 .link{
-    color: crimson;
+    color: hotpink;
     transition: 1s all ease;
 }
 .link:visited{
-    color: crimson;
+    color: hotpink;
 }
 .link:hover{
     color: greenyellow;

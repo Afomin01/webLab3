@@ -7,19 +7,26 @@
         <h:outputStylesheet name="css/general.css"/>
         <div id="header-info">
             <div id="names-sign">
-                Бакин&#160;Артем,&#160;P3213<br/>Купперштейн&#160;Дмитрий,&#160;P3213
+                <div>
+                    Бакин&#160;Артем,&#160;P3213<br/>Купперштейн&#160;Дмитрий,&#160;P3213
+                </div>
             </div>
-            <div id="lab-sign">Лабораторная №3 <br/> <span> по Веб-программированию</span> </div>
+            <div id="lab-sign">
+                <div>
+                    Лабораторная №3 <br/> <span> по Веб-программированию</span>
+                </div>
+                <div id="header-links">
+                    <div><h:link value="Start page" outcome="toWelcome" styleClass="link"/></div>
+                    <div><h:link value="Main page" outcome="toMain" styleClass="link"/></div>
+                </div>
+            </div>
             <div id="variant-sign">
                 <div>
                     Вариант: 28138
                 </div>
             </div>
         </div>
-        <div id="header-links">
-            <div><h:link value="Start page" outcome="toWelcome" styleClass="link"/></div>
-            <div><h:link value="Main page" outcome="toMain" styleClass="link"/></div>
-        </div>
+
 
     </header>
 </ui:composition>
