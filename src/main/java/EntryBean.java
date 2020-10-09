@@ -1,5 +1,6 @@
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.servlet.http.Cookie;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +11,11 @@ import java.util.UUID;
 public class EntryBean {
     private Entry entry;
 
-    private ArrayList<Entry> entries = new ArrayList<>();
+    private long clientId;
 
-    public ArrayList<Entry> getEntries() {
+    private List<Entry> entries;
+
+    public List<Entry> getEntries() {
         return entries;
     }
 
@@ -21,16 +24,17 @@ public class EntryBean {
     }
 
     public void addCurrentEntry() {
-        Cookie clientId = CookieHelper.getCookie("web_lab3_client_id");
-        if (clientId == null) {
-            CookieHelper.setCookie("web_lab3_client_id", UUID.randomUUID().toString(), 31536000);
-        }
-
         double tempR = entry.getR();
-        entry.setResult(check(entry.getX(), entry.getY(), entry.getR()));
-        entries.add(entry);
-        entry = new Entry();
-        entry.setR(tempR);
+
+        Entry newEntry = new Entry();
+        newEntry.setX(entry.getX());
+        newEntry.setY(entry.getY());
+        newEntry.setR(tempR);
+        newEntry.setResult(check(entry.getX(), entry.getY(), entry.getR()));
+        newEntry.setClientId(clientId);
+        EntryDao.addEntry(newEntry);
+
+        entries.add(newEntry);
     }
 
     public boolean check(double x, double y, double r) {
@@ -45,6 +49,23 @@ public class EntryBean {
 
     public EntryBean() {
         this.entry = new Entry();
+        entry.setR(1);
+
+        Cookie clientIdCookie = CookieHelper.getCookie("web_lab3_client_id");
+        if (clientIdCookie == null) {
+            clientId = UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE;
+            CookieHelper.setCookie("web_lab3_client_id",
+                    String.valueOf(clientId), 31536000);
+        } else {
+            try {
+                clientId = Long.parseLong(clientIdCookie.getValue());
+            } catch (Exception e) {
+                FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+            }
+        }
+
+        entries = EntryDao.getAllClientRows(clientId);
+        System.out.println(entries.size());
     }
 
     public double getX() {
