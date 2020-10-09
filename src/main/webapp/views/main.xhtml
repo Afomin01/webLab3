@@ -118,6 +118,9 @@
                             <f:ajax render="graph"/>
                         </h:selectOneMenu>
                     </div>
+                    <h:commandButton value="Clear" styleClass="command-button" action="#{entryBean.clearClientEntries}" style="height: 30px; width: 100px;">
+                        <f:ajax render="result-table graph"/>
+                    </h:commandButton>
                 </h:form>
             </div>
         </div>
