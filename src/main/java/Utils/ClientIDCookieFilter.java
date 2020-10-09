@@ -43,6 +43,7 @@ public class ClientIDCookieFilter implements Filter {
             httpServletResponse.addCookie(cookie);
         }
         request.setAttribute("clientID", clientId);
+        chain.doFilter(request, response);
     }
 
     @Override
