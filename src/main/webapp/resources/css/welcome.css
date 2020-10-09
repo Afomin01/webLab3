@@ -46,6 +46,7 @@
     opacity: 0;
     animation: text-appear 2s linear forwards;
     animation-delay: 2s;
+    font-size: large;
 }
 #java-app-div{
     float: right;
@@ -53,13 +54,14 @@
     opacity: 0;
     animation: text-appear 2s linear forwards;
     animation-delay: 2s;
+    font-size: large;
 }
 #app-description-text{
     margin-bottom: 20px;
     opacity: 0;
     animation: text-appear 3s linear forwards;
     animation-delay: 2s;
-    font-size: large;
+    font-size: x-large;
 }
 #app-description-text label{
     margin-top: 10px;
