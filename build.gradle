@@ -21,7 +21,6 @@ dependencies {
     compile group: 'com.sun.faces', name: 'jsf-api', version: '2.2.20'
     compile group: 'com.sun.faces', name: 'jsf-impl', version: '2.2.20'
     compile group: 'org.primefaces', name: 'primefaces', version: '7.0'
-    compile group: 'org.omnifaces', name: 'omnifaces', version: '2.0'
 
     compileOnly('javax.faces:javax.faces-api:2.3')
     implementation('org.hibernate:hibernate-entitymanager:5.4.18.Final')
