@@ -1,7 +1,9 @@
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.servlet.http.Cookie;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @ManagedBean(name="entryBean", eager = true)
 @SessionScoped
@@ -18,7 +20,12 @@ public class EntryBean {
         this.entries = entries;
     }
 
-    public void addCurrentEntry(){
+    public void addCurrentEntry() {
+        Cookie clientId = CookieHelper.getCookie("web_lab3_client_id");
+        if (clientId == null) {
+            CookieHelper.setCookie("web_lab3_client_id", UUID.randomUUID().toString(), 31536000);
+        }
+
         double tempR = entry.getR();
         entry.setResult(check(entry.getX(), entry.getY(), entry.getR()));
         entries.add(entry);
