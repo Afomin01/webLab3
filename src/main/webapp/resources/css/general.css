@@ -52,7 +52,7 @@ footer div{
 }
 #names-sign{
     width: 30%;
-    padding: 0 0 0 15px;
+    margin: 0 0 0 20px;
     height: 100%;
     display: table;
 }
@@ -61,7 +61,7 @@ footer div{
     height: 100%;
     width: 30%;
     text-align: right;
-    padding: 0 15px 0 0;
+    margin: 0 20px 0 0;
 }
 #variant-sign > div, #names-sign > div{
     display: table-cell;

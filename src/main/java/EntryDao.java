@@ -9,8 +9,7 @@ import java.util.List;
 
 public class EntryDao {
 
-    //private static EntityManager em = HibernateUtil.getEm();
-    private static EntityManager em;
+    private static EntityManager em = HibernateUtil.getEm();
 
     public static List<Entry> getAllClientRows(long clientId) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
