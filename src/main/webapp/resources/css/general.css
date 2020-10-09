@@ -1,7 +1,5 @@
 html{
     height: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
 }
 body{
     height: 100%;
@@ -13,8 +11,6 @@ body{
     font-size: medium;
     margin: 0;
     padding: 0;
-    max-width: 100%;
-    overflow-x: hidden;
 }
 header{
     flex-shrink: 0;
@@ -23,6 +19,7 @@ header{
     flex-direction: column;
     font-size: x-large;
     margin: 0 0 30px 0;
+    min-width: 1600px;
 }
 #header-info{
     display: flex;
@@ -48,6 +45,7 @@ footer{
     text-align: center;
     background: #131313;
     margin: 30px 0 0 0;
+    min-width: 1600px;
 }
 footer div{
     margin: 10px;

@@ -1,9 +1,10 @@
 #client-date{
     width: 30%;
+    min-width: 510px;
 }
 #server-date{
     width: 30%;
-
+    min-width: 510px;
 }
 .clock-sign{
     text-align: center;
@@ -11,6 +12,7 @@
 }
 #harmonograph-div{
     width: 40%;
+    min-width: 500px;
     text-align: center;
     display: flex;
     flex-direction: column;
