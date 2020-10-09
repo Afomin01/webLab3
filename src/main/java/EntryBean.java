@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@ManagedBean(name="entryBean", eager = true)
+@ManagedBean(name="entryBean")
 @SessionScoped
 public class EntryBean {
     private Entry entry;
@@ -26,20 +26,6 @@ public class EntryBean {
     }
 
     public void addCurrentEntry() {
-        if(clientId==0){
-            FacesContext facesContext = FacesContext.getCurrentInstance();
-            HttpServletRequest request = (HttpServletRequest) facesContext.getExternalContext().getRequest();
-            try {
-                clientId = Long.parseLong(request.getAttribute("clientID").toString());
-            }catch (Exception e){
-                HttpServletResponse response = (HttpServletResponse) facesContext.getExternalContext().getResponse();
-                clientId = UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE;
-                Cookie cookie = new Cookie("web_lab3_client_id",Long.toString(clientId));
-                cookie.setMaxAge(31536000);
-                response.addCookie(cookie);
-            }
-        }
-
         Entry newEntry = new Entry(entry.getX(), entry.getY(),entry.getR(), check(entry.getX(), entry.getY(), entry.getR()), clientId);
         EntryDao.addEntry(newEntry);
 
@@ -64,6 +50,20 @@ public class EntryBean {
     public EntryBean() {
         this.entry = new Entry();
         entry.setR(1);
+
+        if(clientId==0){
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            HttpServletRequest request = (HttpServletRequest) facesContext.getExternalContext().getRequest();
+            try {
+                clientId = Long.parseLong(request.getAttribute("clientID").toString());
+            }catch (Exception e){
+                HttpServletResponse response = (HttpServletResponse) facesContext.getExternalContext().getResponse();
+                clientId = UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE;
+                Cookie cookie = new Cookie("web_lab3_client_id",Long.toString(clientId));
+                cookie.setMaxAge(31536000);
+                response.addCookie(cookie);
+            }
+        }
 
         entries = EntryDao.getAllClientRows(clientId);
     }
