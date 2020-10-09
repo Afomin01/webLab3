@@ -1,3 +1,5 @@
+import Utils.HibernateUtil;
+
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;

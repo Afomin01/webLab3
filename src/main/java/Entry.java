@@ -30,12 +30,14 @@ public class Entry {
     public Entry() {
     }
 
-    public Entry(double x, double y, double r, boolean result) {
+    public Entry(double x, double y, double r, boolean result, long clientId) {
         this.x = x;
         this.y = y;
         this.r = r;
         this.result = result;
+        this.clientId = clientId;
     }
+
 
     public long getId() {
         return id;

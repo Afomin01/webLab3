@@ -1,3 +1,5 @@
+import Utils.CookieHelper;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -24,14 +26,8 @@ public class EntryBean {
     }
 
     public void addCurrentEntry() {
-        double tempR = entry.getR();
 
-        Entry newEntry = new Entry();
-        newEntry.setX(entry.getX());
-        newEntry.setY(entry.getY());
-        newEntry.setR(tempR);
-        newEntry.setResult(check(entry.getX(), entry.getY(), entry.getR()));
-        newEntry.setClientId(clientId);
+        Entry newEntry = new Entry(entry.getX(), entry.getY(),entry.getR(), check(entry.getX(), entry.getY(), entry.getR()), clientId);
         EntryDao.addEntry(newEntry);
 
         entries.add(newEntry);

@@ -1,3 +1,5 @@
+package Utils;
+
 import javax.faces.context.FacesContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
