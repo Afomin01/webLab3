@@ -102,7 +102,7 @@
                     </div>
                     <div class="input-div">
                         <label>Enter Y Value</label>
-                        <h:inputText styleClass="input-text" id="YText" value="#{entryBean.y}" converter="javax.faces.BigDecimal" required="true" requiredMessage="You must enter Y value" converterMessage="Y must be a number in range (-5;5)" validatorMessage="Y must be a decimal number in range (-5;5)">
+                        <h:inputText styleClass="input-text" id="YText" value="#{entryBean.y}" converter="RuDoubleConverter" required="true" requiredMessage="You must enter Y value" converterMessage="Y must be a number" validatorMessage="Y must be a number in range (-5;5)">
                             <f:validator validatorId="YValueValidator"/>
                         </h:inputText>
                         <h:message id="YMessage" for="YText" styleClass="error-message"/>

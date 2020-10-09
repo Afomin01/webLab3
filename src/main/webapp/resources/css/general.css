@@ -1,5 +1,7 @@
 html{
     height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 body{
     height: 100%;
@@ -11,6 +13,8 @@ body{
     font-size: medium;
     margin: 0;
     padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 header{
     flex-shrink: 0;

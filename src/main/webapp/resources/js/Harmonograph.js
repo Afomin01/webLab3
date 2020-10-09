@@ -1,26 +1,36 @@
 $(function() {
     drawGraphOnCanvas('canvas');
+    setInterval(() => {
+        $("#canvas").animate({opacity:0}, 1000, function () {
+            drawGraphOnCanvas('canvas',true);
+            $("#canvas").animate({opacity:1}, 1000);
+        });
+    }, 3000);
 });
 
-function drawGraphOnCanvas(id) {
-    var canvas = document.getElementById(id);
-    var ctx = canvas.getContext('2d');
-    var width = canvas.width;
-    var height = canvas.height;
+function drawGraphOnCanvas(id, needFade=false) {
 
-    var harm = new Harmonograph;
-    var zoom = 80;
+    let canvas = document.getElementById(id);
+    let ctx = canvas.getContext('2d');
+    let width = canvas.width;
+    let height = canvas.height;
 
-    var widthAdd = width / 2;
-    var heightAdd = height / 2;
+    let harm = new Harmonograph;
+    let zoom = 80;
 
-    var xLast = (harm.x(0) * zoom) + widthAdd;
-    var yLast = (harm.y(0) * zoom) + heightAdd;
+    let widthAdd = width / 2;
+    let heightAdd = height / 2;
 
-    var xCurrent = 0;
-    var yCurrent = 0;
+    let xLast = (harm.x(0) * zoom) + widthAdd;
+    let yLast = (harm.y(0) * zoom) + heightAdd;
 
-    for (let t = 1e-02; t < 255; t += 1e-02) {
+    let xCurrent = 0;
+    let yCurrent = 0;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    let interval = 0.05;
+    for (let t = interval; t < 255; t += interval) {
         xCurrent = (harm.x(t) * zoom) + widthAdd;
         yCurrent = (harm.y(t) * zoom) + heightAdd;
 
@@ -28,7 +38,7 @@ function drawGraphOnCanvas(id) {
         ctx.moveTo(xLast, yLast);
         ctx.lineTo(xCurrent, yCurrent);
 
-        ctx.strokeStyle = '#FF0000';
+        ctx.strokeStyle = '#d00000';
         ctx.stroke();
 
         xLast = xCurrent;

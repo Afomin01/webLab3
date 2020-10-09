@@ -9,19 +9,70 @@
     text-align: center;
     font-size: xx-large;
 }
-#redirect-form{
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-}
-#redirect-from-div{
+#harmonograph-div{
     width: 40%;
     text-align: center;
-    display: table;
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    justify-content: center;
+    align-items: center;
 }
-#clocks-redirect-div{
+#clocks-harm-div{
     display: flex;
     flex-direction: row;
-    height: 600px;
+}
+#canvas{
+    width: 500px;
+    height: 500px;
+}
+#here-text{
+    float: left;
+    font-size: xx-large;
+    text-align: left;
+    justify-content: left;
+    opacity: 0;
+    animation-delay: 0.5s;
+    animation: text-appear 2s linear forwards;
+}
+#apps-div{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+#c-app-div{
+    float: left;
+    width: 40%;
+    opacity: 0;
+    animation: text-appear 2s linear forwards;
+    animation-delay: 2s;
+}
+#java-app-div{
+    float: right;
+    width: 40%;
+    opacity: 0;
+    animation: text-appear 2s linear forwards;
+    animation-delay: 2s;
+}
+#app-description-text{
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: text-appear 3s linear forwards;
+    animation-delay: 2s;
+    font-size: large;
+}
+#app-description-text label{
+    margin-top: 10px;
+    font-size: x-large;
+}
+@keyframes text-appear {
+    50% {
+        opacity: 0.8;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    to {
+        opacity: 1;
+    }
 }

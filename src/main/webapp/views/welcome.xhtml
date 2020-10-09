@@ -12,6 +12,7 @@
 
     <h:outputScript name="js/jQuery.js" />
     <h:outputScript name="js/welcome.js" />
+    <h:outputScript name="js/Harmonograph.js" />
 
     <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"/>
 </h:head>
@@ -22,7 +23,7 @@
     </ui:insert>
 
     <div id="main">
-        <div id="clocks-redirect-div">
+        <div id="clocks-harm-div">
             <div id="client-date">
                 <div class="clock-sign">Client time</div>
                 <ui:insert>
@@ -30,8 +31,35 @@
                 </ui:insert>
             </div>
 
-            <div id="redirect-from-div">
-
+            <div id="harmonograph-div">
+                <label id="here-text">While you here...</label>
+                <canvas id="canvas" width="500" height="500"/>
+                <label id="app-description-text">Enjoy incredible Harmonograph random graphs, or take a look at our open-source desktop apps with more functionality: </label>
+                <div id="apps-div">
+                    <div id="c-app-div">
+                        <a href="https://github.com/Afomin01/Harmonograph" target="_blank" rel="noopener noreferrer">
+                            <h:graphicImage value="/resources/images/star720p.png" width="256" height="256"/>
+                        </a>
+                        <label>C++&#160;Edition&#160;(beta)</label>
+                        <ul>
+                            <li>Perfomance x4</li>
+                            <li>Low RAM consumption</li>
+                            <li>Cross-platform due to Qt</li>
+                        </ul>
+                    </div>
+                    <div style="width: 20%"/>
+                    <div id="java-app-div">
+                        <a href="https://github.com/Afomin01/Digital_Harmonograph" target="_blank" rel="noopener noreferrer">
+                            <h:graphicImage value="/resources/images/patricc720p.png" width="256" height="256"/>
+                        </a>
+                        <label>Java&#160;Edition</label>
+                        <ul>
+                            <li>Functionality</li>
+                            <li>RAM destroyer</li>
+                            <li>Cross-platform jar</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div id="server-date">
