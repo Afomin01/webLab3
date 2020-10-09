@@ -1,9 +1,9 @@
-import Utils.CookieHelper;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -13,7 +13,7 @@ import java.util.UUID;
 public class EntryBean {
     private Entry entry;
 
-    private long clientId;
+    private long clientId=0L;
 
     private List<Entry> entries;
 
@@ -26,6 +26,19 @@ public class EntryBean {
     }
 
     public void addCurrentEntry() {
+        if(clientId==0){
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            HttpServletRequest request = (HttpServletRequest) facesContext.getExternalContext().getRequest();
+            try {
+                clientId = Long.parseLong(request.getAttribute("clientID").toString());
+            }catch (Exception e){
+                HttpServletResponse response = (HttpServletResponse) facesContext.getExternalContext().getResponse();
+                clientId = UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE;
+                Cookie cookie = new Cookie("web_lab3_client_id",Long.toString(clientId));
+                cookie.setMaxAge(31536000);
+                response.addCookie(cookie);
+            }
+        }
 
         Entry newEntry = new Entry(entry.getX(), entry.getY(),entry.getR(), check(entry.getX(), entry.getY(), entry.getR()), clientId);
         EntryDao.addEntry(newEntry);
@@ -47,21 +60,7 @@ public class EntryBean {
         this.entry = new Entry();
         entry.setR(1);
 
-        Cookie clientIdCookie = CookieHelper.getCookie("web_lab3_client_id");
-        if (clientIdCookie == null) {
-            clientId = UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE;
-            CookieHelper.setCookie("web_lab3_client_id",
-                    String.valueOf(clientId), 31536000);
-        } else {
-            try {
-                clientId = Long.parseLong(clientIdCookie.getValue());
-            } catch (Exception e) {
-                FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-            }
-        }
-
         entries = EntryDao.getAllClientRows(clientId);
-        System.out.println(entries.size());
     }
 
     public double getX() {
