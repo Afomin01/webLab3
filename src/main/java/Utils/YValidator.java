@@ -13,9 +13,9 @@ public class YValidator implements Validator {
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
         try{
             double num = Double.parseDouble(value.toString());
-            if(num<=-5 || num>=5) throw new ValidatorException(new FacesMessage("Invalid value"));
+            if(num<=-5 || num>=5) throw new ValidatorException(new FacesMessage("Invalid Y value"));
         }catch (Exception e){
-            throw new ValidatorException(new FacesMessage("Invalid value"));
+            throw new ValidatorException(new FacesMessage("Invalid Y value"));
         }
     }
 }

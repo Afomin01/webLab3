@@ -1,5 +1,6 @@
 package Utils;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
@@ -14,7 +15,7 @@ public class RUDoubleConverter implements Converter {
             Double result = Double.parseDouble(value.replace(',','.'));
             return result;
         }catch (Exception e){
-            throw new ConverterException("Invalid RU double");
+            throw new ConverterException(new FacesMessage("Error Converting Double in RU format"));
         }
     }
 
@@ -23,7 +24,7 @@ public class RUDoubleConverter implements Converter {
         try{
             return ((Double) value).toString().replace(',','.');
         }catch (Exception e){
-            throw new ConverterException("Invalid RU double");
+            throw new ConverterException(new FacesMessage("Error Converting Double in RU format"));
         }
     }
 }
