@@ -24,7 +24,9 @@ public class EntryDao {
         CriteriaDelete<Entry> criteriaDelete = criteriaBuilder.createCriteriaDelete(Entry.class);
         Root<Entry> root = criteriaDelete.from(Entry.class);
         criteriaDelete.where(criteriaBuilder.equal(root.get("clientId"), clintId));
+        em.getTransaction().begin();
         em.createQuery(criteriaDelete).executeUpdate();
+        em.getTransaction().commit();
     }
 
     public static void addEntry(Entry entry) {

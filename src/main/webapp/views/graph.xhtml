@@ -39,7 +39,7 @@
 
     <ui:repeat var="entry" value="#{entryBean.entries}">
         <circle cx="#{(140/entryBean.r)*entry.x+175}" cy="#{(140/entryBean.r)*(-entry.y)+175}" r ="4"
-                fill="#{entryBean.check(entry.x, entry.y, entryBean.r) ? 'green' : 'red'}"/>
+                fill="#{entryBean.check(entry.x, entry.y, entryBean.r) ? '#45b745' : 'red'}"/>
     </ui:repeat>
 </svg>
 </ui:composition>
